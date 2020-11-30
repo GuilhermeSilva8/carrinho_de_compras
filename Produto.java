@@ -1,6 +1,6 @@
-class Produto{
-    private String nome;
-    private float valor;
+public class Produto{
+    protected String nome;      // protected permite o acesso "this.nome" a uma classe que herda de Produto
+    protected double valor;      // ao invés de this.getNome
     
     
     public String getNome(){
@@ -11,11 +11,12 @@ class Produto{
         this.nome = nome;
     }
     
-    public float getValor(){
+    public double getValor(){
         return valor;
     }
     
-    public void setValor(float valor){
+    public void setValor(double valor){
         this.valor = valor;
     }
 }
+

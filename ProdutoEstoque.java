@@ -1,15 +1,20 @@
-public class ProdutoEstoque{
+public class ProdutoEstoque extends Produto{
 	
-	String nome;
-	double valor;
-	int qntd;
+	private int qtd;
+	
 
-	public ProdutoEstoque(String nome, int valor, int qntd){
+	public ProdutoEstoque(String nome, double valor, int qntd){
 		this.nome = nome;
 		this.valor = valor;
-		this. qntd = qntd;
+		this.qtd = qntd;
 	}
 
-	public ProdutoEstoque(){}
+	public int getQuantidade(){
+        	return qtd;
+    	}
+    
+    	public void setQuantidade(int quantidade){
+        	this.qtd = quantidade;
+    	}
 
 }
