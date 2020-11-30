@@ -12,8 +12,8 @@ public class EstoqueProdutos{
         public String toString () {
 		    String saida = "";
 		    for (ProdutoEstoque p : estoque) {
-	    	    	saida = saida + p.toString() + "\n";
-	    		}
+	    	    saida = saida + p.toString() + "\n\n";
+	        }
     	    return saida;
 	   }
     
