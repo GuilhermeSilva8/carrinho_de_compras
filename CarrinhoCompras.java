@@ -3,7 +3,7 @@ import java.util.*;
 public class CarrinhoCompras{
     
     protected EstoqueProdutos estoque;  // instância de EstoqueProdutos(contem todos os elementos cadastrados que são do tipo Produto)  
-                                        // como percorrer essa lista através da instância estoque?
+                                   
   
     private ArrayList<Produto> carrinho = new ArrayList<Produto>();  // lista para adicionar cada produto no carrinho
     
@@ -12,10 +12,10 @@ public class CarrinhoCompras{
         this.estoque = estoque; 
     }
     
-    public void adicionaItem(String nome, int qtd) throws CloneNotSupportedException{     // recebe o nome de um produto e a quantidade
+    public void adicionaItem(String nome, int qtd) throws CloneNotSupportedException{     
 	
 		if(estoque.percorreEstoque(nome, qtd) == null){
-			System.out.println("Nao foi possivel adicionar o item ao carrinho");
+			System.out.println("Nao foi possivel adicionar o item ao carrinho! \n\n");
 		}
 		else{
 			Produto prod = estoque.percorreEstoque(nome, qtd);
@@ -26,22 +26,25 @@ public class CarrinhoCompras{
     } 
     
     
-    public void finalizaCompras(){   // subtrai a quantidade de produto comprada do estoque  
+    public void finalizaCompras(){   
         for(Produto p: carrinho){
 			estoque.percorreEstoque2(p.getNome(), p.getQuantidade());
 		}	
     }
 	
-    public void calculaTotal(){    // soma dos valores * qtd
-        
+    public double calculaTotal(){    
+    	double total = 0;
+    	for(Produto p: carrinho){
+    		total = total + (p.getQuantidade() * p.getValor()); 
+    	}
+    	return total;
     }  
 	
-	public String toString () {
-		String saida = "";
+    public String toString () {
+	String saida = "";
         for(Produto p: carrinho){
             saida = saida + p.toString() + "\n\n"; 
         }
         return saida ;
-	}
-
+    }
 }
