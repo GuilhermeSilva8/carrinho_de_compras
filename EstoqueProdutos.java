@@ -14,7 +14,9 @@ public class EstoqueProdutos{
         	    if(p.getNome() == nome){ 
                     if(p.getQuantidade() >= qtd){    // se tem o produto com a quantidade com a pedida então adiciona no carrinho
                         return p;
-                    }
+                    }else{
+						System.out.println("Quantidade indisponivel no estoque");
+					}
                 } 
         	}
         	return null;

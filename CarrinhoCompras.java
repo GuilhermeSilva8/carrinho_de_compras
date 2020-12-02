@@ -13,16 +13,15 @@ public class CarrinhoCompras{
     }
     
     public void adicionaItem(String nome, int qtd){     // recebe o nome de um produto e a quantidade
-        Produto prod = estoque.percorreEstoque(nome, qtd);
-		prod.setQuantidade(qtd);
-        carrinho.add(prod);
-        
-        /*String saida = "";
-        for(Produto p: carrinho){
-            saida = saida + p.toString() + "\n\n"; 
+	
+		if(estoque.percorreEstoque(nome, qtd) == null){
+			System.out.println("Nao foi possivel adcionar o item ao carrinho");
+		}
+		else{
+			Produto prod = estoque.percorreEstoque(nome, qtd);
+			prod.setQuantidade(qtd);
+			carrinho.add(prod);
         }
-        
-        return saida ;*/
     } 
     
     

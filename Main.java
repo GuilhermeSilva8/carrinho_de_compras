@@ -18,7 +18,7 @@ public class Main
         	//System.out.println(carrinho.adicionaItem("teclado", 10));
 			carrinho.adicionaItem("teclado", 10);
 			carrinho.adicionaItem("monitor", 50);
-			carrinho.adicionaItem("mouse", 30);
+			carrinho.adicionaItem("mouse", 60);
 			
 			
         	System.out.println(carrinho.toString());
