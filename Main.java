@@ -6,6 +6,9 @@ public class Main
         	estoque.adicionaProduto(new Produto ("telefone", 150, 300));
         	estoque.adicionaProduto(new Produto ("teclado", 70, 50));
         	estoque.adicionaProduto(new Produto("mouse", 50, 50));
+			
+			System.out.println("Estoque antes\n");
+        	System.out.println(estoque.toString());
         
             EstoqueProdutos estoque2 = new EstoqueProdutos();	
         	estoque2.adicionaProduto(new Produto("raiva", 50, 50));
@@ -15,13 +18,16 @@ public class Main
         
         	CarrinhoCompras carrinho = new CarrinhoCompras(estoque);
 
-        	//System.out.println(carrinho.adicionaItem("teclado", 10));
 			carrinho.adicionaItem("teclado", 10);
 			carrinho.adicionaItem("monitor", 50);
 			carrinho.adicionaItem("mouse", 60);
 			
+			//carrinho.finalizaCompras();
 			
-        	System.out.println(carrinho.toString());
+			System.out.println("Carrinho\n");
+			System.out.println(carrinho.toString());
+			System.out.println("Estoque depois\n");
+			System.out.println(estoque.toString());
 	}
 }
 

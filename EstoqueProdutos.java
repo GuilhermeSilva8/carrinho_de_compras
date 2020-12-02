@@ -21,6 +21,14 @@ public class EstoqueProdutos{
         	}
         	return null;
         }
+		
+		/*public void percorreEstoque2(String nome, int qtd){
+        	for(Produto p: this.estoque){   
+        	    if(p.getNome() == nome){ 
+                    p.setQuantidade(p.getQuantidade()-qtd);
+                } 
+        	}
+        }*/
 
         public String toString () {
 		    String saida = "";
