@@ -12,16 +12,17 @@ public class CarrinhoCompras{
         this.estoque = estoque; 
     }
     
-    public String adicionaItem(String nome, int qtd){     // recebe o nome de um produto e a quantidade
+    public void adicionaItem(String nome, int qtd){     // recebe o nome de um produto e a quantidade
         Produto prod = estoque.percorreEstoque(nome, qtd);
+		prod.setQuantidade(qtd);
         carrinho.add(prod);
         
-        String saida = "";
+        /*String saida = "";
         for(Produto p: carrinho){
             saida = saida + p.toString() + "\n\n"; 
         }
         
-        return saida ;
+        return saida ;*/
     } 
     
     
@@ -31,5 +32,13 @@ public class CarrinhoCompras{
     public void calculaTotal(){    // soma dos valores * qtd
         
     }  
+	
+	public String toString () {
+		String saida = "";
+        for(Produto p: carrinho){
+            saida = saida + p.toString() + "\n\n"; 
+        }
+        return saida ;
+	}
 
 }

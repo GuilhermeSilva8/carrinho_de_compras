@@ -15,8 +15,13 @@ public class Main
         
         	CarrinhoCompras carrinho = new CarrinhoCompras(estoque);
 
-        	System.out.println(carrinho.adicionaItem("teclado", 10));
-        	// System.out.println(estoque.toString());
+        	//System.out.println(carrinho.adicionaItem("teclado", 10));
+			carrinho.adicionaItem("teclado", 10);
+			carrinho.adicionaItem("monitor", 50);
+			carrinho.adicionaItem("mouse", 30);
+			
+			
+        	System.out.println(carrinho.toString());
 	}
 }
 
