@@ -9,11 +9,12 @@ public class EstoqueProdutos{
             estoque.add(p);
         }
         
-        public Produto percorreEstoque(String nome, int qtd){
+        public Produto percorreEstoque(String nome, int qtd) throws CloneNotSupportedException{
         	for(Produto p: this.estoque){   
         	    if(p.getNome() == nome){ 
                     if(p.getQuantidade() >= qtd){    // se tem o produto com a quantidade com a pedida então adiciona no carrinho
-                        return p;
+						Produto pCopia = (Produto) p.clone();
+                        return pCopia;
                     }else{
 						System.out.println("Quantidade indisponivel no estoque");
 					}
@@ -22,13 +23,13 @@ public class EstoqueProdutos{
         	return null;
         }
 		
-		/*public void percorreEstoque2(String nome, int qtd){
+		public void percorreEstoque2(String nome, int qtd){
         	for(Produto p: this.estoque){   
         	    if(p.getNome() == nome){ 
                     p.setQuantidade(p.getQuantidade()-qtd);
                 } 
         	}
-        }*/
+        }
 
         public String toString () {
 		    String saida = "";

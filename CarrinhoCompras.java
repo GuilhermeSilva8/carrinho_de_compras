@@ -12,7 +12,7 @@ public class CarrinhoCompras{
         this.estoque = estoque; 
     }
     
-    public void adicionaItem(String nome, int qtd){     // recebe o nome de um produto e a quantidade
+    public void adicionaItem(String nome, int qtd) throws CloneNotSupportedException{     // recebe o nome de um produto e a quantidade
 	
 		if(estoque.percorreEstoque(nome, qtd) == null){
 			System.out.println("Nao foi possivel adicionar o item ao carrinho");
@@ -26,11 +26,11 @@ public class CarrinhoCompras{
     } 
     
     
-    /*public void finalizaCompras(){   // subtrai a quantidade de produto comprada do estoque  
+    public void finalizaCompras(){   // subtrai a quantidade de produto comprada do estoque  
         for(Produto p: carrinho){
 			estoque.percorreEstoque2(p.getNome(), p.getQuantidade());
 		}	
-    }*/
+    }
 	
     public void calculaTotal(){    // soma dos valores * qtd
         

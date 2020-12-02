@@ -1,6 +1,6 @@
 public class Main
 {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws CloneNotSupportedException{
 		    EstoqueProdutos estoque = new EstoqueProdutos();
         	estoque.adicionaProduto(new Produto ("monitor", 500, 100));
         	estoque.adicionaProduto(new Produto ("telefone", 150, 300));
@@ -22,7 +22,7 @@ public class Main
 			carrinho.adicionaItem("monitor", 50);
 			carrinho.adicionaItem("mouse", 60);
 			
-			//carrinho.finalizaCompras();
+			carrinho.finalizaCompras();
 			
 			System.out.println("Carrinho\n");
 			System.out.println(carrinho.toString());

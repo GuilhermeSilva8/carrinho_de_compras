@@ -1,7 +1,11 @@
-public class Produto{
+public class Produto implements Cloneable{
     protected int qtd;
     protected String nome;      // protected permite o acesso "this.nome" a uma classe que herda de Produto
     protected double valor;      // ao invés de this.getNome
+	
+	public Object clone() throws CloneNotSupportedException{
+      return super.clone();
+   }
     
 
 	public Produto(String nome, double valor, int qntd){
