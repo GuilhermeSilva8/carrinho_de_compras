@@ -41,7 +41,7 @@ calcula_valores (x:xs) = [get_preco x * get_quantidade x] ++ calcula_valores xs
 
 
 -- calcula a soma final de uma lista de preços do carrinho
-soma_total meu_carrinho carrinho estoque = foldl (+) 0 (calcula_valores (meu_carrinho carrinho estoque)) 
+soma_total carrinho estoque = foldl (+) 0 (calcula_valores (meu_carrinho carrinho estoque)) 
 
 
 
