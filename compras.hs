@@ -8,8 +8,8 @@ type Produto = (NomeProduto, Preco, Quantidade)
 type Estoque = [Produto]
 
 
-estoque = [("monitor", 500.0, 10), ("telefone", 150.0, 50), ("teclado", 70.0, 30), ("mouse", 50.0, 50)]
-carrinho = [("monitor", 500, 5), ("teclado", 150, 20)]
+estoque = [("monitor", 500, 10), ("telefone", 150, 50), ("teclado", 70, 30), ("mouse", 50, 50)]
+carrinho = [("monitor", 500, 5),("mouse", 50, 100),("teclado", 70, 20), ("telefone", 150, 30)]
 
 get_nome (n, _, _) = n
 get_preco (_, p, _) = p
@@ -34,7 +34,7 @@ verificaCarrinho (x:xs) y |(percorreEstoque (get_nome x) (get_quantidade x) y)  
 
 
 -- recebe a lista do carrinho já verificada 
-meu_carrinho = verificaCarrinho carrinho estoque 
+meu_carrinho carrinho estoque = verificaCarrinho carrinho estoque 
 
 
 -- recebe a lista meu_carrinho e retorna outra lista para ser finalizada
@@ -43,7 +43,7 @@ lista_valores (x:xs) = [get_preco x * get_quantidade x] ++ lista_valores xs
 
 
 -- calcula a soma final de uma lista de preços do carrinho
-somaTotal = foldl (+) 0 (lista_valores meu_carrinho) 
+somaTotal = foldl (+) 0 (lista_valores (meu_carrinho carrinho estoque)) 
 
 
 
