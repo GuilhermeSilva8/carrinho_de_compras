@@ -32,7 +32,7 @@ public class EstoqueProdutos{
         
         public String toString () {
 		    String saida = "";
-		    for (Produto p : this.estoque) {      // estoque é uma lista de produtos cadastrados
+		    for (Produto p : this.estoque) {      
 	    	    	saida = saida + p.toString() + "\n\n";
 	            }
     	    return saida;

@@ -2,10 +2,10 @@ import java.util.*;
 
 public class CarrinhoCompras{
     
-    protected EstoqueProdutos estoque;  // instância de EstoqueProdutos(contem todos os elementos cadastrados que são do tipo Produto)  
+    protected EstoqueProdutos estoque;  
                                    
   
-    private ArrayList<Produto> carrinho = new ArrayList<Produto>();  // lista para adicionar cada produto no carrinho
+    private ArrayList<Produto> carrinho = new ArrayList<Produto>();  
     
 
     public CarrinhoCompras (EstoqueProdutos estoque){
@@ -13,23 +13,20 @@ public class CarrinhoCompras{
     }
     
     public void adicionaItem(String nome, int qtd) throws CloneNotSupportedException{     
-	
-		if(estoque.percorreEstoque(nome, qtd) == null){
-			System.out.println("Nao foi possivel adicionar o item ao carrinho! \n\n");
-		}
-		else{
-			Produto prod = estoque.percorreEstoque(nome, qtd);
-			prod.setQuantidade(qtd);
-			carrinho.add(prod);
+	if(estoque.percorreEstoque(nome, qtd) == null){
+		System.out.println("Nao foi possivel adicionar o item ao carrinho! \n\n");
+	}
+	else{
+	      	Produto prod = estoque.percorreEstoque(nome, qtd);
+		prod.setQuantidade(qtd);
+		carrinho.add(prod);
         }
-		
     } 
-    
     
     public void finalizaCompras(){   
         for(Produto p: carrinho){
-			estoque.percorreEstoque2(p.getNome(), p.getQuantidade());
-		}	
+		estoque.percorreEstoque2(p.getNome(), p.getQuantidade());
+	}	
     }
 	
     public double calculaTotal(){    
